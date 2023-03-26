@@ -42,4 +42,10 @@ export class StudentService {
       updateStudentRequest
     );
   }
+
+  deleteStudent(studentId: string): Observable<Student> {
+    return this.httpClient.delete<Student>(
+      this.baseApiUrl + '/students/' + studentId
+    );
+  }
 }
